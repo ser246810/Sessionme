@@ -1,0 +1,27 @@
+const data = [
+  { id: 1, name: "Alice", score: 3 },
+  { id: 2, name: "Bob", score: 7.87 },
+  { id: 3, name: "Charlie", score: 9.001 },
+  { id: 4, name: "David", score: 11 },
+  { id: 5, name: "Eve", score: 13 },
+  { id: 6, name: "Frank", score: 8 },
+  { id: 7, name: "Grace", score: 9 },
+  { id: 8, name: "Hannah", score: 9.2 },
+  { id: 9, name: "Isaac", score: 8.86 }
+];
+
+// پردازش داده‌ها
+const processedData = data.map(person => {
+  // اگر نمره کمتر از 8 باشد، به آن یک واحد اضافه می‌کنیم
+  if (person.score < 8) {
+    person.score += 1;
+  }
+  // اگر نمره بالاتر از 10 باشد، پیغام "قبول شدی" را به نام اضافه می‌کنیم
+  if (person.score > 10) {
+    person.message = "قبول شدی";
+  }
+  return person;
+});
+
+// نمایش نتیجه در کنسول
+console.log(processedData);
